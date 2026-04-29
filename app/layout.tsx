@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Pixelify_Sans, Rubik } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { LanguageProvider } from '@/context/LanguageContext'
 import './globals.css'
 
 const pixelifySans = Pixelify_Sans({ 
@@ -43,8 +44,10 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${pixelifySans.variable} ${rubik.variable}`}>
       <body>
-        {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        <LanguageProvider>
+          {children}
+          {process.env.NODE_ENV === 'production' && <Analytics />}
+        </LanguageProvider>
       </body>
     </html>
   )

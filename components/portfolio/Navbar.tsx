@@ -1,19 +1,24 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useLanguage } from '@/context/LanguageContext'
+import { translations } from '@/lib/translations'
+import LanguageSwitcher from './LanguageSwitcher'
 import styles from './Navbar.module.css'
 
-const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#services', label: 'Services' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#contact', label: 'Contact' },
-]
-
 export default function Navbar() {
+  const { language } = useLanguage()
+  const t = translations[language]
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const navLinks = [
+    { href: '#home', label: t.home },
+    { href: '#about', label: t.about },
+    { href: '#services', label: t.services },
+    { href: '#projects', label: t.projects },
+    { href: '#contact', label: t.contact },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,6 +47,8 @@ export default function Navbar() {
           ))}
         </ul>
 
+        <LanguageSwitcher />
+
         <button
           className={`${styles.mobileMenuBtn} ${isMobileMenuOpen ? styles.active : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -68,6 +75,9 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+        <div className={styles.mobileLanguageSwitcher}>
+          <LanguageSwitcher />
+        </div>
       </div>
     </nav>
   )

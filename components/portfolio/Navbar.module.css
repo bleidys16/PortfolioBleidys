@@ -163,4 +163,11 @@
   .container {
     padding: 0 1.5rem;
   }
+
+  .mobileLanguageSwitcher {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

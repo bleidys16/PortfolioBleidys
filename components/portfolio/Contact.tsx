@@ -14,7 +14,7 @@ export default function Contact() {
     e.preventDefault()
     // Handle form submission
     console.log('Form submitted:', formData)
-    alert('Thank you for your message! I will get back to you soon.')
+    alert('¡Gracias por tu mensaje! Te contactaré pronto.')
     setFormData({ name: '', email: '', message: '' })
   }
 
@@ -31,12 +31,12 @@ export default function Contact() {
       
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.label}>Get In Touch</span>
+          <span className={styles.label}>Ponte En Contacto</span>
           <h2 className={styles.title}>
-            Let&apos;s Work <span className={styles.highlight}>Together</span>
+            Trabajemos <span className={styles.highlight}>Juntos</span>
           </h2>
           <p className={styles.subtitle}>
-            Have a project in mind? Let&apos;s create something amazing together.
+            ¿Tienes un proyecto en mente? Creemos algo increíble juntos.
           </p>
         </div>
 
