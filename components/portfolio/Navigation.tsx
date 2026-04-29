@@ -36,21 +36,26 @@ export default function Navigation() {
   }, [])
 
   return (
-    <nav className={`${styles.nav} ${isScrolled ? styles.scrolled : ''}`}>
-      <ul className={styles.navList}>
-        {navItems.map((item) => (
-          <li key={item.href}>
-            <a
-              href={item.href}
-              className={`${styles.navLink} ${
-                activeSection === item.href.replace('#', '') ? styles.active : ''
-              }`}
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <div className={styles.wrapper}>
+      <nav className={`${styles.nav} ${isScrolled ? styles.scrolled : ''}`}>
+        <ul className={styles.navList}>
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <a
+                href={item.href}
+                className={`${styles.navLink} ${
+                  activeSection === item.href.replace('#', '')
+                    ? styles.active
+                    : ''
+                }`}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+    </div>
   )
 }
