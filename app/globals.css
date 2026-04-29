@@ -19,8 +19,8 @@
   --color-accent-violet: #8b5cf6;
   --color-border: rgba(255, 255, 255, 0.1);
   --color-border-hover: rgba(255, 255, 255, 0.2);
-  --font-heading: 'Pixelify Sans', cursive;
-  --font-body: 'Rubik', sans-serif;
+  --font-heading: var(--font-pixelify), 'Pixelify Sans', cursive;
+  --font-body: var(--font-rubik), 'Rubik', sans-serif;
   --transition-fast: 0.2s ease;
   --transition-medium: 0.3s ease;
 }
