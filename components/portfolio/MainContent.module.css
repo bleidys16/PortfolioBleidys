@@ -17,7 +17,7 @@
 
 .heroTitle {
   font-family: var(--font-heading);
-  font-size: 48px;
+  font-size: 60px;
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 20px;
@@ -340,7 +340,7 @@
   }
 
   .heroTitle {
-    font-size: 32px;
+    font-size: 40px;
   }
 
   .heroDescription {

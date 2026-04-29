@@ -7,9 +7,12 @@
   background: rgba(17, 17, 17, 0.8);
   backdrop-filter: blur(12px);
   border: 1px solid var(--color-border);
-  border-radius: 50px;
+  border-radius: 24px; /* Cambiado a estilo squircle de la tarjeta */
   padding: 8px 12px;
   transition: all var(--transition-medium);
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .nav.scrolled {
@@ -19,28 +22,118 @@
 
 .navList {
   display: flex;
-  gap: 4px;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navItem {
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .navLink {
-  display: block;
-  padding: 10px 18px;
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
   color: var(--color-text-secondary);
-  border-radius: 25px;
+  border-radius: 12px;
   transition: all var(--transition-fast);
+  text-decoration: none;
+  background: transparent;
 }
 
 .navLink:hover {
-  color: var(--color-text-primary);
-  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-accent-purple);
+  background: rgba(168, 85, 247, 0.1); /* Subtle purple background */
 }
 
+/* Contacto y Active states estilo botón morado completo como en el logo */
 .navLink.active {
   color: white;
   background: var(--color-accent-purple);
+}
+
+.navLink.active:hover {
+  background: var(--color-accent-violet);
+  color: white;
+}
+
+/* Tooltip / Nombre abajo */
+.navLabel {
+  position: absolute;
+  top: 55px; /* Aparece debajo del icono */
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Triangulito del tooltip */
+.navLabel::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background: var(--color-bg-card);
+  border-left: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border);
+}
+
+.navLink:hover + .navLabel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background-color: var(--color-border);
+}
+
+.langToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 12px;
+  height: 44px;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-body);
+}
+
+.langToggle:hover {
+  color: var(--color-accent-purple);
+  background: rgba(168, 85, 247, 0.1);
+}
+
+.langIcon {
+  color: currentColor;
 }
 
 @media (max-width: 768px) {
@@ -48,10 +141,30 @@
     top: auto;
     bottom: 24px;
     padding: 6px 8px;
+    gap: 8px;
   }
 
   .navLink {
-    padding: 8px 12px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .navLabel {
+    top: -40px; /* En móviles el tooltip aparece arriba para que el dedo no lo tape */
+  }
+
+  .navLabel::after {
+    top: auto;
+    bottom: -4px;
+    border-top: none;
+    border-bottom: 1px solid var(--color-border);
+    border-left: none;
+    border-right: 1px solid var(--color-border);
+  }
+
+  .langToggle {
+    height: 40px;
+    padding: 0 8px;
     font-size: 12px;
   }
 }
@@ -66,10 +179,10 @@
 
   .navList {
     justify-content: space-between;
-  }
-
-  .navLink {
-    padding: 8px 10px;
-    font-size: 11px;
+    flex: 1;
   }
 }
+
+.hidden { transform: translate(-50%, -150%); opacity: 0; pointer-events: none; }
+@media (max-width: 768px) { .hidden { transform: translateY(150%); } }
+@media (max-width: 480px) { .hidden { transform: translateY(150%); } }

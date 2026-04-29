@@ -1,3 +1,7 @@
+'use client'
+
+import { useLanguage } from '@/context/LanguageContext'
+import { dictionary } from '@/lib/dictionary'
 import styles from './ProfileCard.module.css'
 
 const socialLinks = [
@@ -32,6 +36,9 @@ const socialLinks = [
 ]
 
 export default function ProfileCard() {
+  const { language } = useLanguage()
+  const content = dictionary[language].profile
+
   return (
     <aside className={styles.card}>
       
@@ -43,19 +50,19 @@ export default function ProfileCard() {
       </div>
       
       <h1 className={styles.name}>Bleidys Larios</h1>
-      <p className={styles.role}>Desarrolladora Web Full Stack Junior</p>
+      <p className={styles.role}>{content.role}</p>
       
       <div className={styles.location}>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16">
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
           <circle cx="12" cy="10" r="3"/>
         </svg>
-        <span>Colombia</span>
+        <span>{content.country}</span>
       </div>
 
       <div className={styles.status}>
         <span className={styles.statusIndicator} />
-        <span>Disponible para trabajar</span>
+        <span>{content.status}</span>
       </div>
       
       <div className={styles.socialLinks}>
@@ -74,7 +81,7 @@ export default function ProfileCard() {
       </div>
       
       <a href="#contacto" className={styles.ctaButton}>
-        Hablemos
+        {content.cta}
       </a>
     </aside>
   )
