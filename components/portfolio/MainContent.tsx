@@ -5,6 +5,7 @@ import { dictionary } from '@/lib/dictionary'
 import styles from './MainContent.module.css'
 import CyberText from './CyberText'
 import RevealSection from './RevealSection'
+import TechGlobe from './TechGlobe'
 
 const skills = [
   'React', 'Next.js', 'TypeScript', 'Node.js',
@@ -106,13 +107,7 @@ export default function MainContent() {
         </div>
 
         <h4 className={styles.subsectionTitle}>{content.about.techTitle}</h4>
-        <div className={styles.skills}>
-          {skills.map((skill, index) => (
-            <span key={index} className={styles.skillTag}>
-              {skill}
-            </span>
-          ))}
-        </div>
+        <TechGlobe />
       </RevealSection>
 
       {/* Services Section */}
@@ -136,7 +131,13 @@ export default function MainContent() {
           {projects.map((project, index) => (
             <div key={index} className={styles.projectCard}>
               <a href={project.link} target="_blank" rel="noopener noreferrer" className={styles.projectImagePlaceholder}>
-                <span>{project.title.charAt(0)}</span>
+                {project.title.toLowerCase().includes('cine') ? (
+                  <img src="/cine.png" alt={project.title} className={styles.projectImage} />
+                ) : project.title.toLowerCase().includes('manjares') ? (
+                  <img src="/manjares.png" alt={project.title} className={styles.projectImage} />
+                ) : (
+                  <span>{project.title.charAt(0)}</span>
+                )}
                 <div className={styles.projectOverlay}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="28" height="28">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />

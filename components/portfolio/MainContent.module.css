@@ -209,8 +209,8 @@
 }
 
 .projectImagePlaceholder {
-  height: 160px;
-  background: linear-gradient(135deg, var(--color-accent-purple), var(--color-accent-violet));
+  height: 180px;
+  background: var(--color-bg-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -218,6 +218,18 @@
   overflow: hidden;
   cursor: pointer;
   text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.08);
 }
 
 .projectImagePlaceholder span {
@@ -231,26 +243,38 @@
 .projectOverlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px); /* Professional glass effect */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
   color: white;
-  font-size: 14px;
-  font-weight: 600;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.projectOverlay svg {
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
 }
 
 .projectImagePlaceholder:hover .projectOverlay {
   opacity: 1;
 }
 
-.projectImagePlaceholder:hover span {
-  opacity: 0.3;
-  transform: scale(0.85);
+.projectImagePlaceholder:hover .projectOverlay svg {
+  transform: translateY(0);
+}
+
+.projectOverlay span {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.9;
 }
 
 .projectInfo {

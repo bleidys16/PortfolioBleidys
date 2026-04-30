@@ -44,7 +44,11 @@ export default function ProfileCard() {
       
       <div className={styles.avatarWrapper}>
         <div className={styles.avatar}>
-          <span className={styles.avatarText}>BL</span>
+          <img 
+            src="/me.jpg" 
+            alt="Bleidys Larios" 
+            className={styles.profileImage}
+          />
         </div>
         <span className={styles.statusDot} aria-hidden="true" />
       </div>
