@@ -3,6 +3,8 @@
 import { useLanguage } from '@/context/LanguageContext'
 import { dictionary } from '@/lib/dictionary'
 import styles from './MainContent.module.css'
+import CyberText from './CyberText'
+import RevealSection from './RevealSection'
 
 const skills = [
   'React', 'Next.js', 'TypeScript', 'Node.js',
@@ -79,12 +81,14 @@ export default function MainContent() {
   return (
     <div className={styles.content}>
       {/* Hero Section */}
-      <section className={styles.hero} id="inicio">
+      <RevealSection className={styles.hero} id="inicio">
         <div className={styles.heroText}>
-          <h2 className={styles.heroTitle}>
-            {content.hero.title1}
-            <span className={styles.highlight}>{content.hero.highlight}</span>
-          </h2>
+          <CyberText 
+            text={content.hero.title1} 
+            highlight={content.hero.highlight} 
+            className={styles.heroTitle} 
+            highlightClassName={styles.highlight}
+          />
           <p className={styles.heroDescription}>
             {content.hero.description}
           </p>
@@ -98,10 +102,10 @@ export default function MainContent() {
             </div>
           ))}
         </div>
-      </section>
+      </RevealSection>
 
       {/* About Section */}
-      <section className={styles.section} id="sobre-mi">
+      <RevealSection className={styles.section} id="sobre-mi">
         <h3 className={styles.sectionTitle}>{content.about.title}</h3>
         <div className={styles.aboutContent}>
           <p className={styles.aboutText}>
@@ -120,10 +124,10 @@ export default function MainContent() {
             </span>
           ))}
         </div>
-      </section>
+      </RevealSection>
 
       {/* Services Section */}
-      <section className={styles.section} id="servicios">
+      <RevealSection className={styles.section} id="servicios">
         <h3 className={styles.sectionTitle}>{content.services.title}</h3>
         <div className={styles.servicesGrid}>
           {services.map((service, index) => (
@@ -134,10 +138,10 @@ export default function MainContent() {
             </div>
           ))}
         </div>
-      </section>
+      </RevealSection>
 
       {/* Projects Section */}
-      <section className={styles.section} id="proyectos">
+      <RevealSection className={styles.section} id="proyectos">
         <h3 className={styles.sectionTitle}>{content.projects.title}</h3>
         <div className={styles.projectsGrid}>
           {projects.map((project, index) => (
@@ -157,10 +161,10 @@ export default function MainContent() {
             </a>
           ))}
         </div>
-      </section>
+      </RevealSection>
 
       {/* Contact Section */}
-      <section className={styles.section} id="contacto">
+      <RevealSection className={styles.section} id="contacto">
         <h3 className={styles.sectionTitle}>{content.contact.title}</h3>
         <p className={styles.contactIntro}>
           {content.contact.intro}
@@ -202,7 +206,7 @@ export default function MainContent() {
             {content.contact.btnSubmit}
           </button>
         </form>
-      </section>
+      </RevealSection>
 
       {/* Footer */}
       <footer className={styles.footer}>
