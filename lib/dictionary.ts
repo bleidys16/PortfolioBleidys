@@ -5,6 +5,7 @@ export const dictionary = {
       about: 'Sobre Mí',
       services: 'Servicios',
       projects: 'Proyectos',
+      testimonials: 'Testimonios',
       contact: 'Contacto'
     },
     profile: {
@@ -47,15 +48,46 @@ export const dictionary = {
       list: [
         {
           title: 'CineApp',
-          description: 'Aplicación web para explorar películas y series con información detallada, tráilers y reseñas.'
+          description: 'Aplicación web para explorar películas y series con información detallada, tráilers y reseñas.',
+          tags: ['React', 'API REST', 'CSS Modules'],
+          link: 'https://cine-psi-lilac.vercel.app/',
+          repo: 'https://github.com/bleidys16/CineApp'
         },
         {
-          title: 'E-Commerce Dashboard',
-          description: 'Panel de administración para tiendas online con estadísticas en tiempo real.'
+          title: 'Manjares del Campo',
+          description: 'Tienda en línea de productos artesanales del campo colombiano con catálogo y carrito de compras.',
+          tags: ['Next.js', 'TypeScript', 'Tailwind'],
+          link: 'https://manjares-del-campo.vercel.app/',
+          repo: 'https://github.com/bleidys16/ManjaresdelCampo'
+        }
+      ]
+    },
+    testimonials: {
+      title: 'Testimonios',
+      list: [
+        {
+          name: 'Carlos Mendoza',
+          role: 'CEO, StartupCo',
+          comment: 'Bleidys entregó un proyecto excepcional. Su atención al detalle y su capacidad para resolver problemas de forma creativa superaron todas mis expectativas.',
+          stars: 5
         },
         {
-          title: 'Task Manager',
-          description: 'Aplicación de gestión de tareas con autenticación y sincronización en la nube.'
+          name: 'Valentina Ríos',
+          role: 'Product Manager, DigitalHub',
+          comment: 'Trabajar con Bleidys fue una experiencia increíble. Siempre propuso soluciones innovadoras y el resultado final fue impresionante.',
+          stars: 5
+        },
+        {
+          name: 'Andrés Suárez',
+          role: 'Emprendedor',
+          comment: 'Desarrolló mi tienda virtual con mucho profesionalismo. El diseño quedó hermoso y la funcionalidad es perfecta. Totalmente recomendada.',
+          stars: 5
+        },
+        {
+          name: 'María Fernanda',
+          role: 'Directora Creativa',
+          comment: 'Excelente comunicación durante todo el proceso. El sitio web que creó refleja exactamente la visión de nuestra marca.',
+          stars: 4
         }
       ]
     },
@@ -78,6 +110,7 @@ export const dictionary = {
       about: 'About Me',
       services: 'Services',
       projects: 'Projects',
+      testimonials: 'Testimonials',
       contact: 'Contact'
     },
     profile: {
@@ -120,15 +153,46 @@ export const dictionary = {
       list: [
         {
           title: 'CineApp',
-          description: 'Web application to explore movies and series with detailed information, trailers, and reviews.'
+          description: 'Web app to explore movies and series with detailed info, trailers, and reviews.',
+          tags: ['React', 'API REST', 'CSS Modules'],
+          link: 'https://cine-psi-lilac.vercel.app/',
+          repo: 'https://github.com/bleidys16/CineApp'
         },
         {
-          title: 'E-Commerce Dashboard',
-          description: 'Admin panel for online stores with real-time analytics and statistics.'
+          title: 'Manjares del Campo',
+          description: 'Online store for Colombian artisan products with a product catalog and shopping cart.',
+          tags: ['Next.js', 'TypeScript', 'Tailwind'],
+          link: 'https://manjares-del-campo.vercel.app/',
+          repo: 'https://github.com/bleidys16/ManjaresdelCampo'
+        }
+      ]
+    },
+    testimonials: {
+      title: 'Testimonials',
+      list: [
+        {
+          name: 'Carlos Mendoza',
+          role: 'CEO, StartupCo',
+          comment: 'Bleidys delivered an exceptional project. Her attention to detail and ability to solve problems creatively exceeded all my expectations.',
+          stars: 5
         },
         {
-          title: 'Task Manager',
-          description: 'Task management application with secure authentication and cloud synchronization.'
+          name: 'Valentina Ríos',
+          role: 'Product Manager, DigitalHub',
+          comment: 'Working with Bleidys was an incredible experience. She always proposed innovative solutions and the final result was impressive.',
+          stars: 5
+        },
+        {
+          name: 'Andrés Suárez',
+          role: 'Entrepreneur',
+          comment: 'She developed my online store with great professionalism. The design is beautiful and the functionality is perfect. Highly recommended.',
+          stars: 5
+        },
+        {
+          name: 'María Fernanda',
+          role: 'Creative Director',
+          comment: 'Excellent communication throughout the entire process. The website she created perfectly reflects our brand vision.',
+          stars: 4
         }
       ]
     },
