@@ -6,6 +6,7 @@ import styles from './MainContent.module.css'
 import CyberText from './CyberText'
 import RevealSection from './RevealSection'
 import TechGlobe from './TechGlobe'
+import ContactForm from './ContactForm'
 
 const skills = [
   'React', 'Next.js', 'TypeScript', 'Node.js',
@@ -210,47 +211,7 @@ export default function MainContent() {
 
       {/* Contact Section */}
       <RevealSection className={styles.section} id="contacto">
-        <h3 className={styles.sectionTitle}>{content.contact.title}</h3>
-        <p className={styles.contactIntro}>
-          {content.contact.intro}
-        </p>
-        <form className={styles.contactForm}>
-          <div className={styles.formRow}>
-            <div className={styles.formGroup}>
-              <label htmlFor="name" className={styles.formLabel}>{content.contact.name}</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                className={styles.formInput}
-                placeholder={content.contact.namePlaceholder}
-              />
-            </div>
-            <div className={styles.formGroup}>
-              <label htmlFor="email" className={styles.formLabel}>Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className={styles.formInput}
-                placeholder="tu@email.com"
-              />
-            </div>
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="message" className={styles.formLabel}>{content.contact.message}</label>
-            <textarea
-              id="message"
-              name="message"
-              className={styles.formTextarea}
-              placeholder={content.contact.msgPlaceholder}
-              rows={5}
-            />
-          </div>
-          <button type="submit" className={styles.submitButton}>
-            {content.contact.btnSubmit}
-          </button>
-        </form>
+        <ContactForm content={content.contact} />
       </RevealSection>
 
       {/* Footer */}
