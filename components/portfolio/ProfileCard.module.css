@@ -51,14 +51,14 @@
   content: '';
   position: absolute;
   width: 140px;
-  /* Un poco más grande que el avatar (135px + bordes) */
   height: 140px;
   border-radius: 50%;
-  background: conic-gradient(transparent,
-      transparent,
-      transparent,
-      var(--color-accent-purple));
-  animation: rotateLaser 3s linear infinite;
+  background: conic-gradient(
+    from 0deg,
+    transparent 80%,
+    var(--color-accent-purple) 100%
+  );
+  animation: rotateLaser 2s linear infinite; /* Un poco más rápido para efecto tecnológico */
   filter: blur(2px);
 }
 
@@ -66,7 +66,6 @@
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
@@ -81,8 +80,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border: 2px solid rgba(168, 85, 247, 0.2);
-  /* Borde base tenue */
+  border: 2px solid rgba(168, 85, 247, 0.2); /* Borde base tenue */
   position: relative;
   z-index: 2;
 }
@@ -120,8 +118,7 @@
   font-size: 24px;
   font-weight: 700;
   color: var(--color-text-primary);
-  margin-top: 8px;
-  /* Reduced space below avatar */
+  margin-top: 8px; /* Reduced space below avatar */
   margin-bottom: 4px;
 }
 
@@ -152,8 +149,7 @@
   gap: 8px;
   font-size: 13px;
   color: #22c55e;
-  margin-bottom: 16px;
-  /* Reduced from 24px */
+  margin-bottom: 16px; /* Reduced from 24px */
 }
 
 .statusIndicator {
@@ -179,8 +175,7 @@
 .socialLinks {
   display: flex;
   gap: 10px;
-  margin-bottom: 16px;
-  /* Reduced from 24px */
+  margin-bottom: 16px; /* Reduced from 24px */
 }
 
 .socialLink {
@@ -242,6 +237,14 @@
 
   .avatarWrapper {
     margin-bottom: 0;
+    width: 80px;
+    height: 80px;
+  }
+
+  .avatarWrapper::before {
+    width: 86px; /* Ajustado para el avatar de 80px */
+    height: 86px;
+    filter: blur(1px); /* Menos blur en móvil para que sea más fino */
   }
 
   .avatar {
