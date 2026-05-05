@@ -19,7 +19,7 @@ export default function MainContent() {
   const content = dictionary[language]
 
   const stats = [
-    { number: '+3', label: content.hero.statsLabel },
+    { number: '3', label: content.hero.statsLabel },
   ]
 
   const services = [
